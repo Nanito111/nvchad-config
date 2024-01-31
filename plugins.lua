@@ -1,5 +1,9 @@
 local plugins = {
   {
+  'stevearc/conform.nvim',
+  opts = {},
+  },
+  {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
