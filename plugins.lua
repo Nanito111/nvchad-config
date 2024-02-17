@@ -51,13 +51,16 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "lua-language-server",
         "black",
         "debugpy",
-        "ruff",
         "pyright",
         "html-lsp",
         "css-lsp",
         "json-lsp",
+        -- "csharp-language-server",
+        "omnisharp",
+        "csharpier",
       },
     },
   },
@@ -79,6 +82,7 @@ local plugins = {
         "html",
         "css",
         "json",
+        "c_sharp",
       }
     }
   },
