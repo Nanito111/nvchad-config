@@ -10,8 +10,8 @@ local servers = {
   "cssls",
   "html",
   "jsonls",
-  -- "csharp_ls",
-  "omnisharp",
+  "csharp_ls",
+  -- "omnisharp",
 }
 
 for _, lsp in ipairs(servers) do
@@ -21,7 +21,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.omnisharp.setup{
-  cmd={"omnisharp"},
-}
+-- lspconfig.omnisharp.setup{
+--   cmd={"omnisharp"},
+-- }
 

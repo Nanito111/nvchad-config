@@ -1,7 +1,7 @@
 local plugins = {
   {
-  'stevearc/conform.nvim',
-  opts = {},
+    'stevearc/conform.nvim',
+    opts = {},
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -58,8 +58,8 @@ local plugins = {
         "html-lsp",
         "css-lsp",
         "json-lsp",
-        -- "csharp-language-server",
-        "omnisharp",
+        "csharp-language-server",
+        -- "omnisharp",
         "csharpier",
       },
     },

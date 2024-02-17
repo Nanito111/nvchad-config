@@ -3,7 +3,7 @@ local M = {}
 
 M.ui =
 {
-  theme = "obsidian_ember",
+  theme = "monochrome",
   cmp = {
     icons = true,
     lspkind_text = true,
