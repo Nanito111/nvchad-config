@@ -1,7 +1,17 @@
 local plugins = {
   {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    opts = function()
+      return require("custom.configs.scrollEOF")
+    end
+  },
+  {
     'stevearc/conform.nvim',
-    opts = {},
+    event = { "BufWritePre" },
+    config = function()
+      return require("custom.configs.conform")
+    end
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -23,7 +33,7 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    config = function(_, opts)
+    config = function(_)
       require("core.utils").load_mappings("dap")
     end
   },
@@ -34,19 +44,19 @@ local plugins = {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
-    config = function(_, opts)
+    config = function(_)
       local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
       require("dap-python").setup(path)
       require("core.utils").load_mappings("dap_python")
     end,
   },
-  {
-    "nvimtools/none-ls.nvim",
-    ft = {"python"},
-    opts = function()
-      return require "custom.configs.null-ls"
-    end,
-  },
+  -- {
+  --   "nvimtools/none-ls.nvim",
+  --   ft = {"python"},
+  --   opts = function()
+  --     return require "custom.configs.null-ls"
+  --   end,
+  -- },
   {
     "williamboman/mason.nvim",
     opts = {

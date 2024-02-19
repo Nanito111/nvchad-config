@@ -21,7 +21,21 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- lspconfig.omnisharp.setup{
---   cmd={"omnisharp"},
--- }
+lspconfig.pyright.setup {
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "basic",
+      }
+    }
+  }
+}
 
+-- lspconfig.omnisharp.setup {
+--   cmd = { "omnisharp" },
+--   filetypes = { "cs", "vb" },
+--   root_dir = function(fname)
+--     return lspconfig.util.root_pattern '*.sln' (fname)
+--   end,
+--
+-- }
