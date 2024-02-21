@@ -10,8 +10,7 @@ local servers = {
   "cssls",
   "html",
   "jsonls",
-  "csharp_ls",
-  -- "omnisharp",
+  "omnisharp",
 }
 
 for _, lsp in ipairs(servers) do
@@ -22,6 +21,8 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     python = {
       analysis = {
@@ -31,11 +32,8 @@ lspconfig.pyright.setup {
   }
 }
 
--- lspconfig.omnisharp.setup {
---   cmd = { "omnisharp" },
---   filetypes = { "cs", "vb" },
---   root_dir = function(fname)
---     return lspconfig.util.root_pattern '*.sln' (fname)
---   end,
---
--- }
+lspconfig.omnisharp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "omnisharp" }
+}

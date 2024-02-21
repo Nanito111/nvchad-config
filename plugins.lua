@@ -1,5 +1,16 @@
 local plugins = {
   {
+    "mfussenegger/nvim-lint",
+
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+    config = function()
+      return require("custom.configs.nvim-lint")
+    end,
+  },
+  {
     'Aasim-A/scrollEOF.nvim',
     event = { 'CursorMoved', 'WinScrolled' },
     opts = function()
@@ -50,13 +61,6 @@ local plugins = {
       require("core.utils").load_mappings("dap_python")
     end,
   },
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   ft = {"python"},
-  --   opts = function()
-  --     return require "custom.configs.null-ls"
-  --   end,
-  -- },
   {
     "williamboman/mason.nvim",
     opts = {
@@ -65,11 +69,11 @@ local plugins = {
         "black",
         "debugpy",
         "pyright",
+        "ruff",
         "html-lsp",
         "css-lsp",
         "json-lsp",
         "csharp-language-server",
-        -- "omnisharp",
         "csharpier",
       },
     },
