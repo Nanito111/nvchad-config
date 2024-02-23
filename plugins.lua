@@ -73,7 +73,7 @@ local plugins = {
         "html-lsp",
         "css-lsp",
         "json-lsp",
-        "csharp-language-server",
+        "omnisharp",
         "csharpier",
       },
     },
