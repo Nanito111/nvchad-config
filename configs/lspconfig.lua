@@ -13,27 +13,14 @@ local servers = {
   "omnisharp",
 }
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+for _, server in ipairs(servers) do
+  Opts = {
     on_attach = on_attach,
     capabilities = capabilities,
   }
+  local require_ok, conf_opts = pcall(require, "custom.configs.servers." .. server)
+  if require_ok then
+    Opts = vim.tbl_deep_extend("force", conf_opts, Opts)
+  end
+  lspconfig[server].setup(Opts)
 end
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "basic",
-      }
-    }
-  }
-}
-
-lspconfig.omnisharp.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = { "omnisharp" }
-}
