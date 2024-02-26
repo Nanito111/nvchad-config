@@ -1,8 +1,9 @@
 local plugins = {
   {
-    "andweeb/presence.nvim",
-    init = function()
-      require("custom.configs.discord-presence.discord-presence")
+    'IogaMaster/neocord',
+    event = "VeryLazy",
+    config = function()
+      require("custom.configs.neocord.neocord")
     end
   },
   {
@@ -18,15 +19,15 @@ local plugins = {
   {
     'Aasim-A/scrollEOF.nvim',
     event = { 'CursorMoved', 'WinScrolled' },
-    opts = function()
-      return require("custom.configs.scrollEOF")
+    config = function()
+      require("custom.configs.scrollEOF")
     end
   },
   {
     'stevearc/conform.nvim',
     event = { "BufWritePre" },
     config = function()
-      return require("custom.configs.conform")
+      require("custom.configs.conform")
     end
   },
   {

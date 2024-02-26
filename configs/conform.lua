@@ -1,9 +1,7 @@
-local conform = require("conform")
-
-conform.setup({
+require("conform").setup({
   formatters_by_ft = {
     python = { "black" },
-    csharp = { "csharpier" }
+    csharp = { "csharpier" },
   },
 
   format_on_save = function(bufnr)
@@ -15,5 +13,3 @@ conform.setup({
     return { timeout_ms = 5000, lsp_fallback = true, async = true }
   end,
 })
-
-return conform

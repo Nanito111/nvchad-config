@@ -1,5 +1,4 @@
--- Default settings
-local options = {
+require("scrollEOF").setup({
   -- The pattern used for the internal autocmd to determine
   -- where to run scrollEOF. See https://neovim.io/doc/user/autocmd.html#autocmd-pattern
   pattern = '*',
@@ -9,5 +8,4 @@ local options = {
   disabled_filetypes = {},
   -- List of modes to disable scrollEOF for. see https://neovim.io/doc/user/builtin.html#mode()
   disabled_modes = {},
-}
-require("scrollEOF").setup(options)
+})
