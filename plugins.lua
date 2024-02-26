@@ -1,7 +1,12 @@
 local plugins = {
   {
+    "andweeb/presence.nvim",
+    init = function()
+      require("custom.configs.discord-presence.discord-presence")
+    end
+  },
+  {
     "mfussenegger/nvim-lint",
-
     event = {
       "BufReadPre",
       "BufNewFile",
