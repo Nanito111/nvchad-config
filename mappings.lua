@@ -7,6 +7,7 @@ M.disabled = {
     ["<C-l>"] = "",
     ["<C-m>"] = "",
     ["<C-s>"] = "",
+    ["<C-c>"] = "",
   },
   n = {
     ["<leader>fm"] = "",
@@ -23,8 +24,8 @@ M.general = {
     ["<C-j>"] = { "<CR>", "carriage return" },
     ["<C-k>"] = { "<DEL>", "delete" },
     ["<C-l>"] = { "<NL>", "linefeed" },
+    ["<C-c>"] = { "<ESC>", "escape" },
   },
-
   n = {
     ["<leader>fm"] = {
       function()
