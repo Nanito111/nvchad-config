@@ -1,12 +1,5 @@
 local plugins = {
   {
-    'IogaMaster/neocord',
-    event = "VeryLazy",
-    config = function()
-      require("custom.configs.neocord.neocord")
-    end
-  },
-  {
     "mfussenegger/nvim-lint",
     event = {
       "BufReadPre",

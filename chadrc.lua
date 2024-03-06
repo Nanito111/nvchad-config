@@ -3,7 +3,7 @@ local M = {}
 
 M.ui =
 {
-  theme = "monochrome",
+  theme = "melange",
   cmp = {
     icons = true,
     lspkind_text = true,
