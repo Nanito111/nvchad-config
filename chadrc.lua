@@ -1,30 +1,24 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui =
-{
-  theme = "melange",
-  cmp = {
-    icons = true,
-    lspkind_text = true,
-    selected_item_bg = "colored",
-  },
-  lsp = {
-    signature = {
-      disabled = true
-    }
-  },
-
+M.ui = {
+  theme = "kanagawa",
   tabufline = {
     lazyload = true,
     enabled = true,
   },
-  statusline = {
-    theme = "default",
-    separator_style = "block"
-  },
   telescope = {
     style = "bordered",
+  },
+  statusline = {
+    theme = "minimal",
+    separator_style = "round",
+    order = require("nano_statusline")["order"],
+    modules = require("nano_statusline")["modules"],
+  },
+  theme_toggle = {
+    "kanagawa",
+    "chocolate",
   },
   nvdash = {
     load_on_startup = true,
@@ -41,10 +35,10 @@ M.ui =
       [[                                                                       ]],
     },
   },
-
-  lsp_semantic_tokens = true,
+  -- hl_override = {
+  -- 	Comment = { italic = true },
+  -- 	["@comment"] = { italic = true },
+  -- },
 }
 
-M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
 return M

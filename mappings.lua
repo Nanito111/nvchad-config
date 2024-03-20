@@ -1,53 +1,16 @@
-local M = {}
-M.disabled = {
-  i = {
-    ["<C-h>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
-    ["<C-l>"] = "",
-    ["<C-m>"] = "",
-    ["<C-s>"] = "",
-    ["<C-c>"] = "",
-  },
-  n = {
-    ["<leader>fm"] = "",
-    ["<C-s>"] = "",
-  },
-  v = {
-    ["<leader>fm"] = "",
-    ["<C-s>"] = "",
-  }
-}
-M.general = {
-  i = {
-    ["<C-h>"] = { "<BS>", "backspace" },
-    ["<C-j>"] = { "<CR>", "carriage return" },
-    ["<C-k>"] = { "<DEL>", "delete" },
-    ["<C-l>"] = { "<NL>", "linefeed" },
-    ["<C-c>"] = { "<ESC>", "escape" },
-  },
-  n = {
-    ["<leader>fm"] = {
-      function()
-        require("conform").format({
-          lsp_fallback = true,
-          async = true,
-        })
-      end,
-      "Format Buffer (Conform)"
-    },
-  },
-  v = {
-    ["<leader>fm"] = {
-      function()
-        require("conform").format({
-          lsp_fallback = true,
-          async = true,
-        })
-      end,
-      "Format Buffer (Conform)"
-    },
-  }
-}
+require "nvchad.mappings"
 
-return M
+-- Disable mappings
+local nomap = vim.keymap.del
+
+nomap("i", "<C-h>")
+nomap("i", "<C-j>")
+nomap("i", "<C-k>")
+nomap("n", "<C-s>")
+
+-- Your mappings
+local map = vim.keymap.set
+
+map("i", "<C-j>", "<ENTER>", {desc="Enter"})
+map("i", "<C-k>", "<DEL>", {desc="Delete"})
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})

@@ -1,7 +1,8 @@
-require("conform").setup({
+local options = {
   formatters_by_ft = {
-    python = { "black" },
-    csharp = { "csharpier" },
+    lua = { "stylua" },
+    python={ "black" },
+    csharp={ "csharpier" }
   },
 
   format_on_save = function(bufnr)
@@ -11,5 +12,8 @@ require("conform").setup({
     end
 
     return { timeout_ms = 5000, lsp_fallback = true, async = true }
+
   end,
-})
+}
+
+require("conform").setup(options)
