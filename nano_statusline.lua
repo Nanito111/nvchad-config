@@ -12,7 +12,7 @@
 
 return {
 
-  order = { "file", "git", "%=", "mode", "diagnostics", "%=", "lsp_msg", "lsp", "cwd", "cursor" },
+  order = { "mode", "file", "git", "%=", "diagnostics", "%=", "lsp_msg", "lsp", "cwd", "cursor" },
   modules = {
     lsp = function()
       if rawget(vim, "lsp") then
@@ -25,6 +25,5 @@ return {
 
       return ""
     end,
-    cursor = "%#St_pos_sep#" .. "• " .. "%#St_pos_icon# %#St_pos_text# %p %% ",
   },
 }

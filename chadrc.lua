@@ -11,10 +11,10 @@ M.ui = {
     style = "bordered",
   },
   statusline = {
-    theme = "minimal",
+    theme = "default",
     separator_style = "round",
-    order = require("nano_statusline")["order"],
-    modules = require("nano_statusline")["modules"],
+    order = require("nano_statusline").order,
+    modules = require("nano_statusline").modules,
   },
   theme_toggle = {
     "kanagawa",
@@ -35,10 +35,6 @@ M.ui = {
       [[                                                                       ]],
     },
   },
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
 
 return M
