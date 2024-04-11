@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "kanagawa",
+  theme = "chocolate",
   tabufline = {
     lazyload = true,
     enabled = true,

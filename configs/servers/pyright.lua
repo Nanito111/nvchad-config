@@ -7,10 +7,10 @@ return {
       analysis = {
         autoSearchPaths = true,
         diagnosticMode = "workspace",
-        typeCheckingMode = "basic",
+        typeCheckingMode = "standard",
         useLibraryCodeForTypes = true,
       },
       pythonPath = "python",
-    }
-  }
+    },
+  },
 }
