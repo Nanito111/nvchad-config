@@ -1,7 +1,8 @@
-local lint = require("lint")
+local lint = require "lint"
 
 lint.linters_by_ft = {
   python = { "ruff" },
+  html = { "curlylint" },
 }
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {

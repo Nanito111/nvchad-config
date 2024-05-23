@@ -10,6 +10,8 @@ local servers = {
   "html",
   "jsonls",
   "omnisharp",
+  "glsl_analyzer",
+  "gdscript",
 }
 
 for _, server in ipairs(servers) do
