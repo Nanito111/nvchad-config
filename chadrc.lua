@@ -2,7 +2,8 @@
 local M = {}
 
 M.ui = {
-  theme = "chocolate",
+  theme = "wombat",
+  transparency = true,
   tabufline = {
     lazyload = true,
     enabled = true,
@@ -17,7 +18,7 @@ M.ui = {
     modules = require("nano_statusline").modules,
   },
   theme_toggle = {
-    "kanagawa",
+    "wombat",
     "chocolate",
   },
   nvdash = {

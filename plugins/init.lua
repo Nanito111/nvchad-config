@@ -64,6 +64,7 @@ return {
         "gdscript",
         "godot_resource",
         "gdshader",
+        "markdown",
       },
       highlight = { enable = true },
       indent = { enable = false },
