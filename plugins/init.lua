@@ -24,24 +24,6 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "black",
-        "pyright",
-        "ruff",
-        "html-lsp",
-        "css-lsp",
-        "json-lsp",
-        "omnisharp",
-        "csharpier",
-        "curlylint",
-        "glsl_analyzer",
-      },
-    },
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
@@ -65,6 +47,7 @@ return {
         "godot_resource",
         "gdshader",
         "markdown",
+        "zig",
       },
       highlight = { enable = true },
       indent = { enable = false },

@@ -2,8 +2,6 @@
 local M = {}
 
 M.ui = {
-  theme = "wombat",
-  transparency = true,
   tabufline = {
     lazyload = true,
     enabled = true,
@@ -13,13 +11,9 @@ M.ui = {
   },
   statusline = {
     theme = "default",
-    separator_style = "round",
+    separator_style = "arrow",
     order = require("nano_statusline").order,
     modules = require("nano_statusline").modules,
-  },
-  theme_toggle = {
-    "wombat",
-    "chocolate",
   },
   nvdash = {
     load_on_startup = true,
@@ -35,6 +29,32 @@ M.ui = {
       [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
       [[                                                                       ]],
     },
+  },
+}
+
+M.base46 = {
+  theme = "kanagawa",
+  transparency = true,
+  theme_toggle = {
+    "wombat",
+    "kanagawa",
+  },
+}
+
+M.mason = {
+  pkgs = {
+    "lua-language-server",
+    "black",
+    "pyright",
+    "ruff",
+    "html-lsp",
+    "css-lsp",
+    "json-lsp",
+    "omnisharp",
+    "csharpier",
+    "curlylint",
+    "zls",
+    "actionlint",
   },
 }
 
