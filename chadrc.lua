@@ -32,6 +32,18 @@ M.ui = {
   },
 }
 
+M.term = {
+  sizes = { sp = 0.4, vsp = 0.5 },
+  float = {
+    relative = "editor",
+    row = 0.05,
+    col = 0.068,
+    width = 0.85,
+    height = 0.85,
+    border = "single",
+  },
+}
+
 M.base46 = {
   theme = "kanagawa",
   transparency = true,
