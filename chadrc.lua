@@ -53,11 +53,11 @@ M.term = {
 }
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "gruvchad",
   transparency = true,
   theme_toggle = {
     "wombat",
-    "kanagawa",
+    "gruvchad",
   },
 }
 
