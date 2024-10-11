@@ -19,6 +19,7 @@ M.nvdash = {
 
 M.colorify = {
   enabled = true,
+  mode = "virtual",
 }
 
 M.lsp = {
@@ -36,12 +37,29 @@ M.ui = {
   },
   statusline = {
     enabled = true,
-    theme = "vscode",
+    theme = "minimal",
+    separator_style = "round",
+    order = {
+      "cursor",
+      "git",
+      "%=",
+      "diagnostics",
+      "mode",
+      "file",
+      "%=",
+      "lsp_msg",
+      "lsp",
+    },
   },
 }
 
 M.term = {
-  sizes = { sp = 0.4, vsp = 0.5 },
+  sizes = {
+    sp = 0.4,
+    vsp = 0.5,
+    ["bo sp"] = 0.4,
+    ["bo vsp"] = 0.5,
+  },
   float = {
     relative = "editor",
     row = 0.05,

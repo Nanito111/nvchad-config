@@ -6,13 +6,13 @@ return {
       require "configs.conform"
     end,
   },
-  {
-    "Aasim-A/scrollEOF.nvim",
-    event = { "CursorMoved", "WinScrolled" },
-    config = function()
-      require "configs.scrollEOF"
-    end,
-  },
+  -- {
+  --   "Aasim-A/scrollEOF.nvim",
+  --   event = { "CursorMoved", "WinScrolled" },
+  --   config = function()
+  --     require "configs.scrollEOF"
+  --   end,
+  -- },
   {
     "mfussenegger/nvim-lint",
     event = {
@@ -52,5 +52,17 @@ return {
       highlight = { enable = true },
       indent = { enable = false },
     },
+  },
+  {
+    "nvchad/volt",
+    lazy = true,
+  },
+  {
+    "nvchad/minty",
+    cmd = { "Shades", "Huefy" },
+  },
+  {
+    "nvchad/menu",
+    lazy = true,
   },
 }

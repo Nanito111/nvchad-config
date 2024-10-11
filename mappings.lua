@@ -20,3 +20,16 @@ map({ "n", "v" }, "<leader>fm", function()
   }
 end, { desc = "Format Buffer" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})
+
+-- Keyboard users
+vim.keymap.set({ "n", "v" }, "<C-t>", function()
+  require("menu").open "default"
+end, {})
+
+-- mouse users + nvimtree users!
+vim.keymap.set({ "n", "v" }, "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})
