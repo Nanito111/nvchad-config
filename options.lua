@@ -1,6 +1,5 @@
 require "nvchad.options"
 
-vim.cmd.set "list listchars=tab:-·,trail:·"
 vim.cmd.set "nowrap"
 vim.cmd.set "shiftwidth=0"
 vim.opt.scrolloff = 10
@@ -36,7 +35,11 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "gdscript",
-  command = "set tabstop=4 softtabstop=4 noexpandtab",
+  callback = function()
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.cmd.set "noexpandtab"
+  end,
 })
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
