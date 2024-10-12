@@ -19,7 +19,7 @@ M.nvdash = {
 
 M.colorify = {
   enabled = true,
-  mode = "virtual",
+  mode = "bg",
 }
 
 M.lsp = {
@@ -62,21 +62,20 @@ M.term = {
   },
   float = {
     relative = "editor",
-    row = 0.05,
+    row = 0.02,
     col = 0.068,
     width = 0.85,
     height = 0.85,
     border = "single",
+  },
+  winopts = {
+    signcolumn = "no",
   },
 }
 
 M.base46 = {
   theme = "wombat",
   transparency = true,
-  theme_toggle = {
-    "wombat",
-    "wombat",
-  },
 }
 
 M.mason = {
