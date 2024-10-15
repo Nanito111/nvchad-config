@@ -74,7 +74,7 @@ M.term = {
 }
 
 M.base46 = {
-  theme = "wombat",
+  theme = "rosepine-dawn",
   transparency = true,
 }
 
