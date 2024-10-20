@@ -41,5 +41,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.cmd.set "noexpandtab"
   end,
 })
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+-- vim.o.cursorlineopt = "both" -- to enable cursorline!
+
+vim.cmd.set "guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
+
+-- set
+-- aug kitty_cursor
+--     au!
+--     au Colorscheme * set guicursor=n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor
+-- aug END
