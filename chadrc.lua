@@ -75,7 +75,7 @@ M.term = {
 
 M.base46 = {
   theme = "rosepine-dawn",
-  transparency = true,
+  transparency = false,
 }
 
 M.mason = {

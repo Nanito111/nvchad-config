@@ -1,11 +1,11 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
-
+local nvlsp = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
+
+nvlsp.defaults()
 
 local servers = {
   "pyright",
+  "ruff",
   "cssls",
   "html",
   "jsonls",
@@ -16,9 +16,9 @@ local servers = {
 
 for _, server in ipairs(servers) do
   Opts = {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
   }
   local require_ok, conf_opts = pcall(require, "configs.servers." .. server)
   if require_ok then
