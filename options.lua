@@ -2,7 +2,7 @@ require "nvchad.options"
 
 vim.cmd.set "nowrap"
 vim.cmd.set "shiftwidth=0"
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- AutoFormating Toggle
 vim.api.nvim_create_user_command("FormatDisable", function(args)
