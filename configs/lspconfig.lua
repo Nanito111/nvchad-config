@@ -5,7 +5,7 @@ nvlsp.defaults()
 
 local servers = {
   "pyright",
-  "ruff",
+  -- "ruff",
   "cssls",
   "html",
   "jsonls",

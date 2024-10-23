@@ -26,6 +26,7 @@ M.lsp = {
   signature = true,
 }
 
+local statusline = require "configs.statusline"
 M.ui = {
   tabufline = {
     enabled = true,
@@ -38,17 +39,21 @@ M.ui = {
   statusline = {
     enabled = true,
     theme = "minimal",
-    separator_style = "round",
     order = {
-      "cursor",
-      "git",
+      "cursor_custom",
+      "git_custom",
       "%=",
       "diagnostics",
-      "mode",
-      "file",
+      "mode_custom",
       "%=",
       "lsp_msg",
-      "lsp",
+      "lsp_custom",
+    },
+    modules = {
+      mode_custom = statusline.mode_custom,
+      git_custom = statusline.git_custom,
+      lsp_custom = statusline.lsp_custom,
+      cursor_custom = statusline.cursor_custom,
     },
   },
 }
@@ -81,7 +86,6 @@ M.base46 = {
 M.mason = {
   pkgs = {
     "lua-language-server",
-    "black",
     "pyright",
     "ruff",
     "html-lsp",
