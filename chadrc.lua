@@ -40,12 +40,11 @@ M.ui = {
     enabled = true,
     theme = "minimal",
     order = {
+      "mode_custom",
       "cursor_custom",
       "git_custom",
       "%=",
       "diagnostics",
-      "mode_custom",
-      "%=",
       "lsp_msg",
       "lsp_custom",
     },

@@ -43,4 +43,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.o.cursorlineopt = "both"
-vim.cmd.set "guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50"
+vim.cmd.set "guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:block-blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,r-cr:hor20,o:hor50"
+
+-- vim.api.nvim_create_autocmd("ModeChanged", {
+--   callback = function()
+--     if vim.fn.mode() == "n" then
+--       vim.api.nvim_get_hl_by_name "hola"
+--     end
+--   end,
+-- })

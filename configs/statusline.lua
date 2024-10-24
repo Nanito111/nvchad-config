@@ -50,7 +50,7 @@ M.mode_custom = function()
   local modes = utils.modes
   local m = vim.api.nvim_get_mode().mode
 
-  return gen_block(modes[m][1], "%#St_" .. modes[m][2] .. "Mode#", "%#St_" .. modes[m][2] .. "ModeSep#")
+  return " " .. gen_block(modes[m][1], "%#St_" .. modes[m][2] .. "Mode#", "%#St_" .. modes[m][2] .. "ModeSep#")
 end
 
 M.git_custom = function()
@@ -59,7 +59,7 @@ end
 
 M.lsp_custom = function()
   local lsp_text = lsp()
-  if string.len(lsp_text) == 0 then
+  if lsp_text == "" then
     return lsp_text
   else
     return gen_block(lsp_text, "%#St_lsp_bg#", "%#St_lsp_sep#", " ", "%#St_lsp_bg#") .. " "
