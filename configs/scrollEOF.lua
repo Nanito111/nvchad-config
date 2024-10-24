@@ -5,7 +5,7 @@ require("scrollEOF").setup {
   -- Whether or not scrollEOF should be enabled in insert mode
   insert_mode = false,
   -- List of filetypes to disable scrollEOF for.
-  disabled_filetypes = { "NvimTree", "NvMenu", "VoltWindow", "lazy", "mason" },
+  disabled_filetypes = { "NvimTree", "NvMenu", "VoltWindow", "lazy", "mason", "nvdash" },
   -- List of modes to disable scrollEOF for. see https://neovim.io/doc/user/builtin.html#mode()
   disabled_modes = { "terminal", "nterminal" },
 }
