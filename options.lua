@@ -3,7 +3,9 @@ require "nvchad.options"
 vim.cmd.set "nowrap"
 vim.cmd.set "shiftwidth=0"
 vim.opt.scrolloff = 15
-vim.cmd.set "listchars=tab:\\ \\ ,trail:·,eol:↴"
+
+local listchars = "tab:\\ \\ ,trail:·"
+vim.cmd.set("listchars=" .. listchars)
 vim.cmd.set "list"
 
 -- AutoFormating Toggle
@@ -41,6 +43,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.tabstop = 4
     vim.opt.softtabstop = 4
     vim.cmd.set "noexpandtab"
+    vim.cmd.set("listchars=eol:↴," .. listchars)
   end,
 })
 

@@ -38,10 +38,12 @@ M.ui = {
   },
   statusline = {
     enabled = true,
+    separator_style = statusline.sep_style,
     theme = "minimal",
     order = {
       "mode_custom",
       "cursor_custom",
+      "file",
       "git_custom",
       "%=",
       "diagnostics",

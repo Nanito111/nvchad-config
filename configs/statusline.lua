@@ -2,8 +2,8 @@ local utils = require "nvchad.stl.utils"
 
 local M = {}
 
-local sep_style = "round"
-local separators = (type(sep_style) == "table" and sep_style) or utils.separators[sep_style]
+M.sep_style = "round"
+local separators = (type(M.sep_style) == "table" and M.sep_style) or utils.separators[M.sep_style]
 
 local sep_l = separators["left"]
 local sep_r = separators["right"]
