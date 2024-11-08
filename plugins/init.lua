@@ -73,4 +73,44 @@ return {
       -- more opts
     },
   },
+  {
+    "Kolkhis/streamer-mode.nvim",
+    -- ft = "dotenv",
+    cmd = {
+      "StreamerMode",
+      "SM",
+      "StreamerModeOff",
+      "SMoff",
+      "StreamerModeSecure",
+      "SMsecure",
+      "StreamerModeEdit",
+      "SMedit",
+      "StreamerModeSoft",
+      "SMsoft",
+    },
+    config = {
+      use_defaults = false,
+      -- Streamer Mode will apply to any path in here. Defaults to all paths.
+      -- This means that Streamer Mode will hide any of the `keywords` below
+      -- when inside any of these directories or filetypes.
+      paths = {
+        "*.env",
+        "*/.env",
+      },
+
+      -- Any text appearing after one of the keywords specified here will be concealed.
+      -- They are case-insensitive.
+      -- E.g., passing in 'API_KEY' will conceal both 'API_KEY' and 'api_key'.
+      keywords = {
+        ".\\+=",
+      },
+      patterns = {},
+
+      level = "secure", -- | 'edit' | 'soft'
+      default_state = "off", -- Whether or not streamer mode turns on when nvim is launched.
+
+      conceal_char = "", -- Default. This is what will be displayed instead
+      -- of your secrets.
+    },
+  },
 }

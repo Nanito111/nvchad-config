@@ -19,17 +19,21 @@ map({ "n", "v" }, "<leader>fm", function()
     async = true,
   }
 end, { desc = "Format Buffer" })
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})
+map("v", "p", "P", { desc = "Paste preserving yank" })
+map("v", "P", "p", { desc = "Paste removing yank" })
 
+-- Open Volt menu
 -- Keyboard users
-vim.keymap.set({ "n", "v" }, "<C-t>", function()
+map({ "n", "v" }, "<C-t>", function()
   require("menu").open "default"
-end, {})
+end, { desc = "VoltMenu open (keyboard)" })
 
 -- mouse users + nvimtree users!
-vim.keymap.set({ "n", "v" }, "<RightMouse>", function()
+map({ "n", "v" }, "<RightMouse>", function()
   vim.cmd.exec '"normal! \\<RightMouse>"'
 
   local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
   require("menu").open(options, { mouse = true })
-end, {})
+end, { desc = "VoltMenu open (mouse)" })
+
+-- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})
