@@ -80,7 +80,7 @@ M.term = {
 }
 
 M.base46 = {
-  theme = "rosepine-dawn",
+  theme = "gruvbox",
   transparency = false,
   hl_override = {
     St_NormalMode = { bold = true },
