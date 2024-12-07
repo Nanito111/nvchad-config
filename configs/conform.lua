@@ -1,4 +1,4 @@
-local options = {
+return {
   formatters_by_ft = {
     lua = { "stylua" },
     python = { "ruff_format" },
@@ -14,5 +14,3 @@ local options = {
     return { timeout_ms = 5000, lsp_fallback = true }
   end,
 }
-
-require("conform").setup(options)

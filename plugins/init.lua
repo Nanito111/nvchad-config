@@ -2,16 +2,12 @@ return {
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
-    config = function()
-      require "configs.conform"
-    end,
+    config = require "configs.conform",
   },
   {
     "Aasim-A/scrollEOF.nvim",
     event = { "CursorMoved", "WinScrolled" },
-    config = function()
-      require "configs.scrollEOF"
-    end,
+    config = require "configs.scrollEOF",
   },
   {
     "mfussenegger/nvim-lint",
@@ -112,5 +108,12 @@ return {
       conceal_char = "", -- Default. This is what will be displayed instead
       -- of your secrets.
     },
+  },
+  {
+    lazy = false,
+    "sphamba/smear-cursor.nvim",
+    opts = function()
+      return require "configs.smear-cursor"
+    end,
   },
 }

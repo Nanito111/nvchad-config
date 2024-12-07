@@ -36,4 +36,8 @@ map({ "n", "v" }, "<RightMouse>", function()
   require("menu").open(options, { mouse = true })
 end, { desc = "VoltMenu open (mouse)" })
 
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})

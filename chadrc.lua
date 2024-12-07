@@ -22,6 +22,10 @@ M.colorify = {
   mode = "bg",
 }
 
+M.cheatsheet = {
+  theme = "simple",
+}
+
 M.lsp = {
   signature = true,
 }
