@@ -9,7 +9,6 @@ local servers = {
   "cssls",
   "html",
   "jsonls",
-  "omnisharp",
   "gdscript",
   "zls",
 }

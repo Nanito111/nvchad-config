@@ -2,7 +2,6 @@ return {
   formatters_by_ft = {
     lua = { "stylua" },
     python = { "ruff_format" },
-    csharp = { "csharpier" },
   },
 
   format_after_save = function(bufnr)

@@ -86,17 +86,6 @@ M.term = {
 M.base46 = {
   theme = "gruvbox",
   transparency = false,
-  hl_override = {
-    St_NormalMode = { bold = true },
-    St_InsertMode = { bold = true },
-    St_ReplaceMode = { bold = true },
-    St_VisualMode = { bold = true },
-    St_TerminalMode = { bold = true },
-    St_NTerminalMode = { bold = true },
-    St_SelectMode = { bold = true },
-    St_CommandMode = { bold = true },
-    St_ConfirmMode = { bold = true },
-  },
 }
 
 M.mason = {
@@ -107,8 +96,6 @@ M.mason = {
     "html-lsp",
     "css-lsp",
     "json-lsp",
-    "omnisharp",
-    "csharpier",
     "curlylint",
     "zls",
     "actionlint",
