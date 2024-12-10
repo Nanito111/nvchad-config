@@ -71,7 +71,7 @@ M.cursor_custom = function()
   local buffer_count_rows = vim.api.nvim_buf_line_count(0)
 
   local cursor_line = string.format("%0" .. string.len(buffer_count_rows) .. "d", current_line)
-  return " " .. gen_block(cursor_line, "%#St_Pos_bg#", "%#St_Pos_sep#", " ", "%#St_Pos_bg#") .. " "
+  return " " .. gen_block(cursor_line, "%#St_Pos_bg#", "%#St_Pos_sep#", "󰯂 ", "%#St_Pos_bg#") .. " "
 end
 
 return M
