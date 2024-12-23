@@ -11,6 +11,7 @@ local servers = {
   "jsonls",
   "gdscript",
   "zls",
+  "ts_ls",
 }
 
 for _, server in ipairs(servers) do

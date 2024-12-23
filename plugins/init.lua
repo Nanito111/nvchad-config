@@ -43,6 +43,8 @@ return {
         "gdshader",
         "markdown",
         "zig",
+        "javascript",
+        "typescript",
       },
       highlight = { enable = true },
       indent = { enable = false },
@@ -69,11 +71,11 @@ return {
       -- more opts
     },
   },
-  {
-    lazy = false,
-    "sphamba/smear-cursor.nvim",
-    opts = function()
-      return require "configs.smear-cursor"
-    end,
-  },
+  -- {
+  --   lazy = false,
+  --   "sphamba/smear-cursor.nvim",
+  --   opts = function()
+  --     return require "configs.smear-cursor"
+  --   end,
+  -- },
 }

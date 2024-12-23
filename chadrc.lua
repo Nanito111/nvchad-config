@@ -99,6 +99,7 @@ M.mason = {
     "curlylint",
     "zls",
     "actionlint",
+    "typescript-language-server",
   },
 }
 
