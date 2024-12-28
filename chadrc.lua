@@ -86,6 +86,12 @@ M.term = {
 M.base46 = {
   theme = "gruvbox",
   transparency = false,
+  changed_themes = {
+    gruvbox = {
+      base_16 = { base00 = "#1D2021" },
+      base_30 = { black = "#1D2021", black2 = "#282828" },
+    },
+  },
 }
 
 M.mason = {
