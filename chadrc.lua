@@ -106,6 +106,7 @@ M.mason = {
     "zls",
     "actionlint",
     "typescript-language-server",
+    "gopls",
   },
 }
 
