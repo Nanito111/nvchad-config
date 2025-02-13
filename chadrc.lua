@@ -84,7 +84,7 @@ M.term = {
 }
 
 M.base46 = {
-  theme = "gruvbox",
+  theme = "flexoki",
   transparency = false,
   changed_themes = {
     gruvbox = {
