@@ -30,6 +30,7 @@ return {
     opts = {
       ensure_installed = {
         "vim",
+        "vimdoc",
         "lua",
         "bash",
         "python",
@@ -41,10 +42,12 @@ return {
         "gdscript",
         "godot_resource",
         "gdshader",
-        "markdown",
+        "go",
         "zig",
         "javascript",
         "typescript",
+        "ini",
+        "hyprlang",
       },
       highlight = { enable = true },
       indent = { enable = false },
