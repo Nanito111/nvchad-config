@@ -40,4 +40,12 @@ end, { desc = "VoltMenu open (mouse)" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+--text wrapping
+map("n", "<leader>ww", function()
+  vim.cmd.set "wrap"
+end, { desc = "Wrap text" })
+map("n", "<leader>wW", function()
+  vim.cmd.set "nowrap"
+end, { desc = "Unwrap text" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})
