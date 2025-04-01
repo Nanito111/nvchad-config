@@ -19,7 +19,7 @@ M.nvdash = {
 
 M.colorify = {
   enabled = true,
-  mode = "bg",
+  mode = "virtual",
 }
 
 M.cheatsheet = {
@@ -85,6 +85,7 @@ M.term = {
 
 M.base46 = {
   theme = "flexoki",
+  theme_toggle = { "flexoki", "flexoki-light" },
   transparency = false,
   changed_themes = {
     gruvbox = {
