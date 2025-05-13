@@ -13,6 +13,7 @@ local servers = {
   "zls",
   "ts_ls",
   "gopls",
+  "somesass_ls",
 }
 
 for _, server in ipairs(servers) do

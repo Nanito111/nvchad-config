@@ -5,11 +5,6 @@ return {
     config = require "configs.conform",
   },
   {
-    "Aasim-A/scrollEOF.nvim",
-    event = { "CursorMoved", "WinScrolled" },
-    config = require "configs.scrollEOF",
-  },
-  {
     "mfussenegger/nvim-lint",
     event = {
       "BufReadPre",
@@ -74,6 +69,7 @@ return {
       -- more opts
     },
   },
+  { import = "nvchad.blink.lazyspec" },
   -- {
   --   lazy = false,
   --   "sphamba/smear-cursor.nvim",
