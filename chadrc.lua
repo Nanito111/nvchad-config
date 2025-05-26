@@ -86,7 +86,7 @@ M.term = {
 M.base46 = {
   theme = "flexoki",
   theme_toggle = { "flexoki", "flexoki-light" },
-  transparency = true,
+  transparency = false,
   changed_themes = {
     gruvbox = {
       base_16 = { base00 = "#1D2021" },
