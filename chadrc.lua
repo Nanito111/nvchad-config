@@ -85,7 +85,7 @@ M.term = {
 M.base46 = {
   theme = "flexoki",
   theme_toggle = { "flexoki", "flexoki-light" },
-  transparency = false,
+  transparency = true,
   hl_override = {
     St_file_sep = { bg = "NONE" },
     St_file_txt = { bg = "red", fg = "black" },
