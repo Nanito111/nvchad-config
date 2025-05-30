@@ -2,7 +2,7 @@ local config = require("nvconfig").ui.statusline
 local sep_style = config.separator_style
 local utils = require "nvchad.stl.utils"
 
-sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
+sep_style = (sep_style ~= "round" and sep_style ~= "block" and sep_style ~= "arrow") and "round" or sep_style
 
 local separators = (type(sep_style) == "table" and sep_style) or utils.separators[sep_style]
 
@@ -80,11 +80,7 @@ end
 
 M.diagnostics = utils.diagnostics
 
-M.cwd = function()
-  local name = vim.uv.cwd()
-  name = name:match "([^/\\]+)[/\\]*$" or name
-  return gen_block(name, "%#St_cwd_txt#", "%#St_cwd_sep#", "", "%#St_cwd_txt#")
-end
+M.cwd = ""
 
 M.cursor = function()
   local current_line = vim.api.nvim_win_get_cursor(0)[1]
