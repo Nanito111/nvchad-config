@@ -28,7 +28,6 @@ M.lsp = {
   signature = true,
 }
 
-local statusline = require "configs.statusline"
 M.ui = {
   tabufline = {
     enabled = true,
@@ -40,8 +39,8 @@ M.ui = {
   },
   statusline = {
     enabled = true,
-    separator_style = statusline.sep_style,
-    theme = "minimal",
+    separator_style = "round",
+    theme = "nano", -- default/vscode/vscode_colored/minimal/nano
     order = {
       "mode",
       "cursor",
@@ -52,13 +51,6 @@ M.ui = {
       "lsp_msg",
       "lsp",
     },
-    modules = {
-      mode = statusline.mode,
-      git = statusline.git,
-      lsp = statusline.lsp,
-      cursor = statusline.cursor,
-      file = statusline.file,
-    },
   },
 }
 
@@ -67,19 +59,6 @@ M.base46 = {
   theme_toggle = { "flexoki", "flexoki-light" },
   transparency = true,
   hl_override = {
-    St_file_sep = { bg = "NONE" },
-    St_file_txt = { bg = "red", fg = "black" },
-    St_lsp_sep = { bg = "NONE" },
-    St_Pos_sep = { bg = "NONE" },
-    St_CommandModeSep = { bg = "NONE" },
-    St_InsertModeSep = { bg = "NONE" },
-    St_TerminalModeSep = { bg = "NONE" },
-    St_NormalModeSep = { bg = "NONE" },
-    St_ConfirmModeSep = { bg = "NONE" },
-    St_ReplaceModeSep = { bg = "NONE" },
-    St_NTerminalModeSep = { bg = "NONE" },
-    St_VisualModeSep = { bg = "NONE" },
-    St_SelectModeSep = { bg = "NONE" },
     NvDashAscii = { fg = "white" },
   },
 }

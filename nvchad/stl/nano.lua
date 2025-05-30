@@ -1,9 +1,10 @@
+local config = require("nvconfig").ui.statusline
+local sep_style = config.separator_style
 local utils = require "nvchad.stl.utils"
 
-local M = {}
+sep_style = (sep_style ~= "round" and sep_style ~= "block") and "block" or sep_style
 
-M.sep_style = "round"
-local separators = (type(M.sep_style) == "table" and M.sep_style) or utils.separators[M.sep_style]
+local separators = (type(sep_style) == "table" and sep_style) or utils.separators[sep_style]
 
 local sep_l = separators["left"]
 local sep_r = separators["right"]
@@ -42,6 +43,8 @@ local function git_display()
   return branch_name .. added .. changed .. removed
 end
 
+local M = {}
+
 M.mode = function()
   if not utils.is_activewin() then
     return ""
@@ -50,7 +53,7 @@ M.mode = function()
   local modes = utils.modes
   local m = vim.api.nvim_get_mode().mode
 
-  return " " .. gen_block(modes[m][1], "%#St_" .. modes[m][2] .. "Mode#", "%#St_" .. modes[m][2] .. "ModeSep#")
+  return " " .. gen_block(modes[m][1], "%#St_" .. modes[m][2] .. "modeText#", "%#St_" .. modes[m][2] .. "ModeSep#")
 end
 
 M.git = function()
@@ -67,8 +70,20 @@ M.lsp = function()
   if lsp_text == "" then
     return lsp_text
   else
-    return gen_block(lsp_text, "%#St_lsp_bg#", "%#St_lsp_sep#", " ", "%#St_lsp_bg#") .. " "
+    return gen_block(lsp_text, "%#St_lsp_txt#", "%#St_lsp_sep#", " ", "%#St_lsp_txt#") .. " "
   end
+end
+
+M.lsp_msg = function()
+  return "%#St_LspMsg#" .. utils.lsp_msg()
+end
+
+M.diagnostics = utils.diagnostics
+
+M.cwd = function()
+  local name = vim.uv.cwd()
+  name = name:match "([^/\\]+)[/\\]*$" or name
+  return gen_block(name, "%#St_cwd_txt#", "%#St_cwd_sep#", "", "%#St_cwd_txt#")
 end
 
 M.cursor = function()
@@ -76,7 +91,11 @@ M.cursor = function()
   local buffer_count_rows = vim.api.nvim_buf_line_count(0)
 
   local cursor_line = string.format("%0" .. string.len(buffer_count_rows) .. "d", current_line)
-  return " " .. gen_block(cursor_line, "%#St_Pos_bg#", "%#St_Pos_sep#", "󰯂 ", "%#St_Pos_bg#") .. " "
+  return " " .. gen_block(cursor_line, "%#St_Pos_txt#", "%#St_Pos_sep#", "󰯂 ", "%#St_Pos_txt#") .. " "
 end
 
-return M
+M["%="] = "%="
+
+return function()
+  return utils.generate("default", M)
+end
