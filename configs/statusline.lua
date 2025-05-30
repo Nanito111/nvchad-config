@@ -14,11 +14,11 @@ local function gen_block(txt, txt_hl_group, sep_hlgroup, icon, icon_hl_group)
   return sep_hlgroup .. sep_l .. icon_hl_group .. icon .. txt_hl_group .. txt .. sep_hlgroup .. sep_r
 end
 
-local function lsp()
+local function lsp_display()
   if rawget(vim, "lsp") then
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client.attached_buffers[utils.stbufnr()] then
-        return (vim.o.columns > 100 and client.name) or "LSP"
+        return (vim.o.columns > 130 and client.name) or "LSP"
       end
     end
   end
@@ -26,7 +26,7 @@ local function lsp()
   return ""
 end
 
-local function git()
+local function git_display()
   if not vim.b[utils.stbufnr()].gitsigns_head or vim.b[utils.stbufnr()].gitsigns_git_status then
     return ""
   end
@@ -42,7 +42,7 @@ local function git()
   return branch_name .. added .. changed .. removed
 end
 
-M.mode_custom = function()
+M.mode = function()
   if not utils.is_activewin() then
     return ""
   end
@@ -53,12 +53,17 @@ M.mode_custom = function()
   return " " .. gen_block(modes[m][1], "%#St_" .. modes[m][2] .. "Mode#", "%#St_" .. modes[m][2] .. "ModeSep#")
 end
 
-M.git_custom = function()
-  return "%#St_gitIcons#" .. git()
+M.git = function()
+  return "%#St_gitIcons#" .. git_display()
 end
 
-M.lsp_custom = function()
-  local lsp_text = lsp()
+M.file = function()
+  local x = utils.file()
+  return gen_block(" " .. x[2], "%#St_file_txt#", "%#St_file_sep#", x[1], "%#St_file_txt#") .. " "
+end
+
+M.lsp = function()
+  local lsp_text = lsp_display()
   if lsp_text == "" then
     return lsp_text
   else
@@ -66,7 +71,7 @@ M.lsp_custom = function()
   end
 end
 
-M.cursor_custom = function()
+M.cursor = function()
   local current_line = vim.api.nvim_win_get_cursor(0)[1]
   local buffer_count_rows = vim.api.nvim_buf_line_count(0)
 
