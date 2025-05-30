@@ -80,6 +80,7 @@ M.base46 = {
     St_NTerminalModeSep = { bg = "NONE" },
     St_VisualModeSep = { bg = "NONE" },
     St_SelectModeSep = { bg = "NONE" },
+    NvDashAscii = { fg = "white" },
   },
 }
 
