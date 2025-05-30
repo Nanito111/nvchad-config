@@ -62,26 +62,6 @@ M.ui = {
   },
 }
 
-M.term = {
-  sizes = {
-    sp = 0.4,
-    vsp = 0.5,
-    ["bo sp"] = 0.4,
-    ["bo vsp"] = 0.5,
-  },
-  float = {
-    relative = "editor",
-    row = 0.02,
-    col = 0.068,
-    width = 0.85,
-    height = 0.85,
-    border = "single",
-  },
-  winopts = {
-    signcolumn = "no",
-  },
-}
-
 M.base46 = {
   theme = "flexoki",
   theme_toggle = { "flexoki", "flexoki-light" },
@@ -100,6 +80,26 @@ M.base46 = {
     St_NTerminalModeSep = { bg = "NONE" },
     St_VisualModeSep = { bg = "NONE" },
     St_SelectModeSep = { bg = "NONE" },
+  },
+}
+
+M.term = {
+  sizes = {
+    sp = 0.4,
+    vsp = 0.5,
+    ["bo sp"] = 0.4,
+    ["bo vsp"] = 0.5,
+  },
+  float = {
+    relative = "editor",
+    row = 0.02,
+    col = 0.068,
+    width = 0.85,
+    height = 0.85,
+    border = "single",
+  },
+  winopts = {
+    signcolumn = "no",
   },
 }
 
