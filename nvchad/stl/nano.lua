@@ -62,7 +62,14 @@ end
 
 M.file = function()
   local x = utils.file()
-  return gen_block(" " .. x[2], "%#St_file_txt#", "%#St_file_sep#", x[1], "%#St_file_txt#") .. " "
+  local icon = x[1]
+  local name = x[2]
+
+  if vim.bo.modified then
+    name = "*" .. name
+  end
+
+  return gen_block(" " .. name, "%#St_file_txt#", "%#St_file_sep#", icon, "%#St_file_txt#") .. " "
 end
 
 M.lsp = function()
