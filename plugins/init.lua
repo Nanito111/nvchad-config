@@ -80,11 +80,4 @@ return {
       },
     },
   },
-  -- {
-  --   lazy = false,
-  --   "sphamba/smear-cursor.nvim",
-  --   opts = function()
-  --     return require "configs.smear-cursor"
-  --   end,
-  -- },
 }
