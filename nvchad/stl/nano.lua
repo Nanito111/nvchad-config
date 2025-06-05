@@ -19,7 +19,7 @@ local function lsp_display()
   if rawget(vim, "lsp") then
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client.attached_buffers[utils.stbufnr()] then
-        return (vim.o.columns > 130 and client.name) or "LSP"
+        return (vim.o.columns > 80 and client.name) or "LSP"
       end
     end
   end
