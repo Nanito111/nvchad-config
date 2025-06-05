@@ -28,9 +28,3 @@ for _, server in ipairs(servers) do
   end
   lspconfig[server].setup(Opts)
 end
-
--- enable plugin "lsp_lines"
-vim.diagnostic.config {
-  virtual_lines = true,
-  virtual_text = false,
-}
