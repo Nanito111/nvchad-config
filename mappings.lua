@@ -48,4 +48,8 @@ map("n", "<leader>wW", function()
   vim.cmd.set "nowrap"
 end, { desc = "Unwrap text" })
 
+map("n", "F", function()
+  vim.diagnostic.open_float()
+end, { desc = "Show diagnostics from current line" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", {desc="your description"})
